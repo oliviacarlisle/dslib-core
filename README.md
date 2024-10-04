@@ -7,4 +7,4 @@ Production-ready robust &amp; efficient implementations of common data structure
 
 ### Queue
 
-Details [here](https://github.com/oliviacarlisle/ts-data-structures/blob/main/Queue.md)
+Go to [/docs/Queue.md](https://github.com/oliviacarlisle/ts-data-structures/blob/main/docs/Queue.md)
