@@ -1,0 +1,28 @@
+{
+  "name": "ts-data-structures",
+  "version": "1.0.0",
+  "description": "Production-ready robust & efficient implementations of common data structures in TypeScript",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliviacarlisle/ts-data-structures.git"
+  },
+  "author": "Olivia Carlisle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliviacarlisle/ts-data-structures/issues"
+  },
+  "homepage": "https://github.com/oliviacarlisle/ts-data-structures#readme",
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "mocha": "^10.7.3",
+    "typescript": "^5.6.2"
+  }
+}
