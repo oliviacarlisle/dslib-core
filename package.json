@@ -1,14 +1,16 @@
 {
   "name": "ts-data-structures",
   "version": "1.0.0",
-  "description": "Production-ready robust & efficient implementations of common data structures in TypeScript",
+  "description": "Simple and efficient implementations of common data structures in TypeScript",
+  "type": "module",
   "main": "index.js",
   "directories": {
     "doc": "docs",
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,10 @@
   },
   "homepage": "https://github.com/oliviacarlisle/ts-data-structures#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
-    "mocha": "^10.7.3",
-    "typescript": "^5.6.2"
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5"
   }
 }
