@@ -106,6 +106,7 @@ export class Queue<T> {
    * Shifts items in place to the start of the array.
    * This helps save memory when headIndex becomes too large.
    *
+   * @private
    */
   private _shiftItems(): void {
     this._items = this._items.slice(this._headIndex);
