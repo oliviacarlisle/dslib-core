@@ -1,6 +1,8 @@
 /**
  * An simple, efficient queue implementation with O(1) enqueue
- * and amortized O(1) dequeue.
+ * and amortized O(1) dequeue, using a circular buffer.
+ *
+ * Dynamically resizes to manage memory usage.
  *
  * @template T The type of elements held in the queue.
  */
@@ -12,7 +14,7 @@ export class Queue<T> {
   /**
    * Creates a new Queue instance.
    *
-   * @param {number} [resizeThreshold=32] The initial capacity of the queue.
+   * @param {number} [initialCapacity=32] The initial capacity of the queue.
    */
   constructor(resizeThreshold: number = 32) {
     this._resizeThreshold = Math.max(Math.floor(resizeThreshold), 32);
