@@ -1,26 +1,51 @@
 # TypeScript Data Structures
 
-Production-ready simple and efficient implementations of common data structures in TypeScript.
+Production-ready simple and efficient TypeScript implementations of common data structures.
 
-To provide standardized solutions for data structures that do not exist natively in TypeScript, these implementations are inspired by Java's native implementations of corresponding data structures. However, for compatibility and ease-of-use, they still follow and prioritize TypeScript paradigms whenever applicable.
-
-## Data structures implemented
+## Data Structures
 
 ### Queue
 
-#### Implementation Overview
+An simple, efficient queue implementation with amortized O(1) operations, using a circular buffer.
 
-A simple and efficient queue implementation. The Queue class uses a single data structure (an array) for storing items without using a circular buffer (for simplicity). The queue lets the JavaScript engine handle array resizing for a growing queue--by using `Array.prototype.push()` for enqueues--which negates the need for a circular buffer.
+The performance of the enqueue and dequeue methods is roughly similar to that of the built-in push and pop methods, respectively.
 
-#### Notes on Time Complexity
+Preliminary benchmark results compared to built-in array method for 2^22 (approx. 4 million) calls to push/enqueue and pop/dequeue:
 
-- `enqueue` method: `O(1)` time
-- `dequeue` method: amortized `O(1)` time on average, `O(n)` in the worst case
+```
+➜  ts-data-structures git:(main) ✗ tsx bench/Queue.bench
+10/12/2024, 4:36:42 PM
+Test size: 4194304 (2^22)
 
-#### Notes on Memory Management
+------- numbers -------
+push: 26.275ms
+enqueue: 32.855ms
+-------
+pop: 10.23ms
+dequeue: 3.325ms
+-----------------------
 
-To prevent the problem of an infinitely increasing `headIndex`, this Queue implementation automatically resets `headIndex` to 0 whenever the queue is empty, and dynamically shrinks the size of the internal array whenever its utilization ratio falls below 50%. This guarantees that memory requirements for a Queue--even one that frequently fluctuates in size--should never be more than twice the memory requirements for its underlying items at any point in time.
+------- strings -------
+push: 222.552ms
+enqueue: 213.289ms
+-------
+pop: 9.376ms
+dequeue: 3.198ms
+-----------------------
 
-To improve memory management further for small queues, no resizes will take place when the size of the queue is less than the initial `resizeThreshold`, which has a default value of `32` and can be increased when invoking the Queue constructor.
+------- objects -------
+push: 225.531ms
+enqueue: 320.968ms
+-------
+pop: 9.394ms
+dequeue: 3.202ms
+-----------------------
+```
 
-To futher faciliate efficient memory management by the underlying JavaScript engine, this implementation makes use of the `delete` keyword on `dequeue`.
+Benchmark script run on MacBook Pro (M3 Pro) using the following version of `tsx` and `node`:
+
+```
+➜  ts-data-structures git:(main) ✗ tsx --version
+tsx v4.19.1
+node v20.17.0
+```

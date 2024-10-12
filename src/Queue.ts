@@ -1,34 +1,47 @@
 /**
- * An simple, efficient queue implementation with O(1) enqueue
- * and amortized O(1) dequeue, using a circular buffer.
+ * An simple, efficient queue implementation with amortized O(1) operations,
+ * using a circular buffer.
  *
  * Dynamically resizes to manage memory usage.
  *
  * @template T The type of elements held in the queue.
  */
 export class Queue<T> {
-  private _items: (T | undefined)[];
-  private _headIndex: number;
-  private readonly _resizeThreshold: number;
+  private _buffer: (T | undefined)[];
+  private _head: number;
+  private _tail: number;
+  private _size: number;
+  private readonly _initialCapacity: number;
 
   /**
    * Creates a new Queue instance.
    *
    * @param {number} [initialCapacity=32] The initial capacity of the queue.
    */
-  constructor(resizeThreshold: number = 32) {
-    this._resizeThreshold = Math.max(Math.floor(resizeThreshold), 32);
-    this._items = [];
-    this._headIndex = 0;
+  constructor(initialCapacity: number = 32) {
+    this._initialCapacity = initialCapacity
+      ? Math.max(Math.floor(initialCapacity), 32)
+      : 32;
+    this._buffer = new Array(this._initialCapacity);
+    this._head = 0;
+    this._tail = 0;
+    this._size = 0;
   }
 
   /**
    * Adds an item to the back of the queue.
    *
    * @param {T} item The item to add to the queue.
+   * @returns {number} The new size of the queue.
    */
-  enqueue(item: T): void {
-    this._items.push(item);
+  enqueue(item: T): number {
+    if (this._size === this._buffer.length) {
+      this._resize(this._buffer.length * 2);
+    }
+
+    this._buffer[this._tail] = item;
+    this._tail = (this._tail + 1) % this._buffer.length;
+    return ++this._size;
   }
 
   /**
@@ -37,27 +50,21 @@ export class Queue<T> {
    * @returns {T | undefined} The item at the front of the queue, or undefined if the queue is empty.
    */
   dequeue(): T | undefined {
-    if (this.isEmpty()) return;
+    if (this._size === 0) return;
 
-    const item = this._items[this._headIndex];
-    delete this._items[this._headIndex];
-    this._headIndex++;
+    const item = this._buffer[this._head];
+    this._buffer[this._head] = undefined;
+    this._head = (this._head + 1) % this._buffer.length;
+    this._size--;
 
-    // If we're using less than half the array, shift items to the front
     if (
-      this.size >= 2 * this._resizeThreshold &&
-      this._headIndex >= this._items.length / 2
+      this._buffer.length >= this._initialCapacity * 2 &&
+      this._size <= this._buffer.length / 4
     ) {
-      this._shiftItems();
+      this._resize(this._buffer.length / 2);
     }
 
-    // Reset the queue when all items have been dequeued
-    if (this._headIndex === this._items.length) {
-      this._items = [];
-      this._headIndex = 0;
-    }
-
-    return item;
+    return item as T;
   }
 
   /**
@@ -66,16 +73,7 @@ export class Queue<T> {
    * @returns {T | undefined} The item at the front of the queue, or undefined if the queue is empty.
    */
   peek(): T | undefined {
-    return this.isEmpty() ? undefined : this._items[this._headIndex];
-  }
-
-  /**
-   * Checks if the queue is empty.
-   *
-   * @returns {boolean} True if the queue is empty, false otherwise.
-   */
-  isEmpty(): boolean {
-    return this.size === 0;
+    return this._size === 0 ? undefined : (this._buffer[this._head] as T);
   }
 
   /**
@@ -84,34 +82,41 @@ export class Queue<T> {
    * @returns {number} The number of items in the queue.
    */
   get size(): number {
-    return this._items.length - this._headIndex;
+    return this._size;
   }
 
   /**
-   * Returns the internal size of the queue (including unused space)
+   * Returns the internal size of the queue.
    *
-   * @returns {number} The internal size of the queue
+   * @returns {number} The internal size of the queue.
    */
-  get _internalSize(): number {
-    return this._items.length;
+  get internalSize(): number {
+    return this._buffer.length;
   }
 
   /**
    * Removes all items from the queue.
    */
   clear(): void {
-    this._items = [];
-    this._headIndex = 0;
+    this._buffer = new Array(this._initialCapacity);
+    this._head = 0;
+    this._tail = 0;
+    this._size = 0;
   }
 
   /**
-   * Shifts items in place to the start of the array.
-   * This helps save memory when headIndex becomes too large.
+   * Resizes the queue
    *
    * @private
+   * @param {number} newSize The new target size of the queue.
    */
-  private _shiftItems(): void {
-    this._items = this._items.slice(this._headIndex);
-    this._headIndex = 0;
+  private _resize(newSize: number): void {
+    const newBuffer = new Array(newSize);
+    for (let i = 0; i < this._size; i++) {
+      newBuffer[i] = this._buffer[(this._head + i) % this._buffer.length];
+    }
+    this._buffer = newBuffer;
+    this._head = 0;
+    this._tail = this._size;
   }
 }
