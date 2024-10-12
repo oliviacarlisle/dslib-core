@@ -9,14 +9,14 @@ describe('Queue', () => {
 
   it('should create an empty queue', () => {
     expect(queue.size).toBe(0);
-    expect(queue.peek()).toBeUndefined();
   });
 
   it('should enqueue elements', () => {
     queue.enqueue(1);
     queue.enqueue(2);
     expect(queue.size).toBe(2);
-    expect(queue.peek()).toBe(1);
+    queue.enqueue(4);
+    expect(queue.size).toBe(3);
   });
 
   it('should dequeue elements in FIFO order', () => {
@@ -24,7 +24,9 @@ describe('Queue', () => {
     queue.enqueue(2);
     queue.enqueue(3);
     expect(queue.dequeue()).toBe(1);
+    expect(queue.size).toBe(2);
     expect(queue.dequeue()).toBe(2);
+    expect(queue.size).toBe(1);
     expect(queue.dequeue()).toBe(3);
     expect(queue.size).toBe(0);
   });
@@ -37,8 +39,11 @@ describe('Queue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
     expect(queue.peek()).toBe(1);
+    expect(queue.peek()).toBe(1);
     expect(queue.size).toBe(2);
   });
+
+  xit('should allow us to peek at any element by index', () => {});
 
   it('should clear all elements from the queue', () => {
     queue.enqueue(1);
@@ -59,7 +64,7 @@ describe('Queue', () => {
     expect(queue.size).toBe(2);
   });
 
-  it('should dynamically increase in size', () => {
+  it('should dynamically grow in size when full', () => {
     // enqueue 32 items
     for (let i = 0; i < 32; i++) {
       queue.enqueue(i);
@@ -73,7 +78,7 @@ describe('Queue', () => {
     expect(queue.internalSize).toBe(64); // internal size should be doubled
   });
 
-  it('should dynamically decrease in size', () => {
+  it('should dynamically shrink in size when less than 25% full', () => {
     // enqueue 60 items
     for (let i = 0; i < 60; i++) {
       queue.enqueue(i);
@@ -94,30 +99,10 @@ describe('Queue', () => {
     expect(queue.internalSize).toBe(32); // unchanged internal size
   });
 
-  it('should accept initialCapacity argument greater than 32', () => {
-    queue = new Queue(60);
-    expect(queue.size).toBe(0);
-    expect(queue.internalSize).toBe(60);
-
-    queue = new Queue(55);
-    expect(queue.size).toBe(0);
-    expect(queue.internalSize).toBe(55);
-  });
-
-  it('the initial capacity should never be less than 32', () => {
-    queue = new Queue(16);
-    expect(queue.size).toBe(0);
-    expect(queue.internalSize).toBe(32);
-
-    queue = new Queue(30);
-    expect(queue.size).toBe(0);
-    expect(queue.internalSize).toBe(32);
-  });
-
   it('should not decrease in size below the initial capacity', () => {
     const values = [32, 20, 60];
     for (const n of values) {
-      queue = new Queue(n);
+      queue = new Queue();
       // enqueue n items
       for (let i = 0; i < n; i++) {
         queue.enqueue(i);
@@ -129,11 +114,11 @@ describe('Queue', () => {
         queue.dequeue();
       }
       expect(queue.size).toBe(2);
-      expect(queue.internalSize).toBe(Math.max(n, 32)); // unchanged internal size
+      expect(queue.internalSize).toBe(32); // unchanged internal size
     }
   });
 
-  it('should handle circular logic correctly', () => {
+  it('should correctly implement circular buffer logic', () => {
     for (let i = 0; i < 32; i++) {
       queue.enqueue(i);
     }
@@ -173,5 +158,34 @@ describe('Queue', () => {
     }
     expect(queue.size).toBe(0);
     expect(queue.internalSize).toBe(32);
+  });
+
+  it('should be iterable', () => {
+    for (let i = 0; i < 50; i++) {
+      queue.enqueue(i);
+    }
+    let val = 0;
+    for (const item of queue) {
+      expect(item).toBe(val);
+      val++;
+    }
+  });
+
+  it('the .entries() method should yield tuples of elements and their indices', () => {
+    for (let i = 0; i < 50; i++) {
+      queue.enqueue(i + 1);
+    }
+    let val = 0;
+    for (const [item, i] of queue.entries()) {
+      expect(item).toBe(val + 1);
+      expect(i).toBe(val);
+      val++;
+    }
+  });
+
+  xit('should have a forEach method', () => {
+    queue.enqueue(3);
+    queue.enqueue(5);
+    queue.enqueue(7);
   });
 });

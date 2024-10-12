@@ -1,12 +1,12 @@
-# TypeScript Data Structures
+# mini-queue
 
-Production-ready simple and efficient TypeScript implementations of common data structures.
+A simple, efficient queue implementation in TypeScript.
 
 ## Data Structures
 
 ### Queue
 
-An simple, efficient queue implementation with amortized O(1) operations, using a circular buffer.
+A simple, efficient queue implementation with amortized O(1) operations, using a circular buffer.
 
 The performance of the enqueue and dequeue methods is roughly similar to that of the built-in push and pop methods, respectively.
 
