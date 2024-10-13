@@ -38,7 +38,7 @@ console.timeEnd('pop');
 // dequeue
 console.time('dequeue');
 for (let i = 0; i < testSize; i++) {
-  arr.pop();
+  q.dequeue();
 }
 console.timeEnd('dequeue');
 console.log('-----------------------');
@@ -72,7 +72,7 @@ console.timeEnd('pop');
 // dequeue
 console.time('dequeue');
 for (let i = 0; i < testSize; i++) {
-  arr.pop();
+  q.dequeue();
 }
 console.timeEnd('dequeue');
 console.log('-----------------------');
@@ -106,7 +106,7 @@ console.timeEnd('pop');
 // dequeue
 console.time('dequeue');
 for (let i = 0; i < testSize; i++) {
-  arr.pop();
+  q.dequeue();
 }
 console.timeEnd('dequeue');
 console.log('-----------------------');
