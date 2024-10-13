@@ -1,7 +1,7 @@
 {
   "name": "mini-queue",
   "version": "1.0.0",
-  "description": "A simple, efficient queue implementation in TypeScript",
+  "description": "A simple, efficient queue implementation written in TypeScript",
   "type": "module",
   "scripts": {
     "test": "jest",
