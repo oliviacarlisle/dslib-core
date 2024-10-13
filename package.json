@@ -1,21 +1,24 @@
 {
-  "name": "ts-data-structures",
+  "name": "mini-queue",
   "version": "1.0.0",
-  "description": "Simple and efficient implementations of common data structures in TypeScript",
+  "description": "A simple, efficient queue implementation in TypeScript",
   "type": "module",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs",
-    "test": "test"
-  },
   "scripts": {
     "test": "jest",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"bench/**/*.ts\"",
+    "dist": "tsc -p tsconfig.dist.json",
+    "bench": "tsx bench/Queue.bench.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oliviacarlisle/ts-data-structures.git"
   },
+  "keywords": [
+    "queue",
+    "fifo",
+    "enqueue",
+    "dequeue"
+  ],
   "author": "Olivia Carlisle",
   "license": "MIT",
   "bugs": {
