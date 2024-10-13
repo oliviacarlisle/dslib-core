@@ -50,7 +50,7 @@ export class Queue<T> implements Iterable<T> {
     if (this.#size === 0) return;
 
     const item = this.#buffer[this.#head];
-    delete this.#buffer[this.#head];
+    this.#buffer[this.#head] = undefined;
     this.#head = (this.#head + 1) % this.#buffer.length;
     this.#size--;
 

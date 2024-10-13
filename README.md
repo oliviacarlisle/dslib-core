@@ -16,31 +16,30 @@ Preliminary benchmark results compared to built-in array method for 2^22 (approx
 > mini-queue@1.0.0 bench
 > tsx bench/Queue.bench.ts
 
-10/12/2024, 8:34:48 PM
 Test size: 4194304 (2^22)
 
 ------- numbers -------
-push: 25.811ms
-enqueue: 32.191ms
+push: 25.385ms
+enqueue: 31.665ms
 -------
-pop: 9.599ms
-dequeue: 3.65ms
+pop: 9.322ms
+dequeue: 27.606ms
 -----------------------
 
 ------- strings -------
-push: 221.245ms
-enqueue: 212.207ms
+push: 220.045ms
+enqueue: 209.886ms
 -------
-pop: 9.457ms
-dequeue: 3.406ms
+pop: 9.557ms
+dequeue: 23.174ms
 -----------------------
 
 ------- objects -------
-push: 221.957ms
-enqueue: 319.909ms
+push: 195.094ms
+enqueue: 307.915ms
 -------
-pop: 9.49ms
-dequeue: 3.373ms
+pop: 9.358ms
+dequeue: 23.145ms
 -----------------------
 ```
 
