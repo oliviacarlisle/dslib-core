@@ -139,7 +139,13 @@ describe('Queue', () => {
     for (let i = 0; i < testSize; i++) {
       queue.enqueue(i);
     }
-    for (let i = 0; i < testSize; i++) {
+    queue.dequeue();
+    queue.dequeue();
+    for (let i = 100; i < testSize * 2; i++) {
+      queue.enqueue(i);
+    }
+    expect(queue.size).toBe(198);
+    for (let i = 2; i < testSize * 2; i++) {
       expect(queue.dequeue()).toBe(i);
     }
   });
