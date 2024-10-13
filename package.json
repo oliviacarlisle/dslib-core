@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"bench/**/*.ts\"",
-    "dist": "tsc -p tsconfig.dist.json"
+    "dist": "tsc -p tsconfig.dist.json",
+    "bench": "tsx bench/Queue.bench.ts"
   },
   "repository": {
     "type": "git",

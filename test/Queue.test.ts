@@ -43,8 +43,6 @@ describe('Queue', () => {
     expect(queue.size).toBe(2);
   });
 
-  xit('should allow us to peek at any element by index', () => {});
-
   it('should clear all elements from the queue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
@@ -183,9 +181,32 @@ describe('Queue', () => {
     }
   });
 
-  xit('should have a forEach method', () => {
+  it('should have a toString method', () => {
     queue.enqueue(3);
     queue.enqueue(5);
     queue.enqueue(7);
+    expect(queue.toString()).toBe('Queue(3) { 3, 5, 7 }');
+  });
+
+  it('should have a forEach method', () => {
+    queue.enqueue(3);
+    queue.enqueue(5);
+    queue.enqueue(7);
+    const arr = [...queue];
+    queue.forEach((value, index, q) => {
+      expect(value).toBe(arr[index]);
+      expect(q).toBe(queue);
+    });
+  });
+
+  it('should get an element by index', () => {
+    queue.enqueue(3);
+    queue.enqueue(5);
+    queue.enqueue(7);
+    expect(queue.get(-1)).toBeUndefined();
+    expect(queue.get(3)).toBeUndefined();
+    expect(queue.get(0)).toBe(3);
+    expect(queue.get(1)).toBe(5);
+    expect(queue.get(2)).toBe(7);
   });
 });

@@ -13,39 +13,41 @@ The performance of the enqueue and dequeue methods is roughly similar to that of
 Preliminary benchmark results compared to built-in array method for 2^22 (approx. 4 million) calls to push/enqueue and pop/dequeue:
 
 ```
-➜  ts-data-structures git:(main) ✗ tsx bench/Queue.bench
-10/12/2024, 4:36:42 PM
+> mini-queue@1.0.0 bench
+> tsx bench/Queue.bench.ts
+
+10/12/2024, 8:34:48 PM
 Test size: 4194304 (2^22)
 
 ------- numbers -------
-push: 26.275ms
-enqueue: 32.855ms
+push: 25.811ms
+enqueue: 32.191ms
 -------
-pop: 10.23ms
-dequeue: 3.325ms
+pop: 9.599ms
+dequeue: 3.65ms
 -----------------------
 
 ------- strings -------
-push: 222.552ms
-enqueue: 213.289ms
+push: 221.245ms
+enqueue: 212.207ms
 -------
-pop: 9.376ms
-dequeue: 3.198ms
+pop: 9.457ms
+dequeue: 3.406ms
 -----------------------
 
 ------- objects -------
-push: 225.531ms
-enqueue: 320.968ms
+push: 221.957ms
+enqueue: 319.909ms
 -------
-pop: 9.394ms
-dequeue: 3.202ms
+pop: 9.49ms
+dequeue: 3.373ms
 -----------------------
 ```
 
 Benchmark script run on MacBook Pro (M3 Pro) using the following version of `tsx` and `node`:
 
 ```
-➜  ts-data-structures git:(main) ✗ tsx --version
+> tsx --version
 tsx v4.19.1
 node v20.17.0
 ```
