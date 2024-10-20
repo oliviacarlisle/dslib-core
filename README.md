@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/oliviacarlisle/core-dslib/badge.svg?branch=main)](https://coveralls.io/github/oliviacarlisle/core-dslib?branch=main)
+[![codecov](https://codecov.io/gh/oliviacarlisle/core-dslib/graph/badge.svg?token=SVPFWK8OW9)](https://codecov.io/gh/oliviacarlisle/core-dslib)
 
 # core-dslib
 
