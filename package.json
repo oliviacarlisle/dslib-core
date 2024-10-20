@@ -1,19 +1,20 @@
 {
-  "name": "array-queue",
+  "name": "core-dslib",
   "version": "1.0.0",
-  "description": "A simple, efficient queue implementation using a circular buffer",
+  "description": "A simple yet powerful data structures library for TypeScript and JavaScript projects.",
   "type": "module",
   "scripts": {
     "test": "jest",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"bench/**/*.ts\"",
     "build": "rm -rf dist && tsc -p tsconfig.dist.json",
-    "bench": "tsx bench/Queue.bench.ts"
+    "bench": "tsx bench/core/Queue.bench.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oliviacarlisle/ts-data-structures.git"
+    "url": "git+https://github.com/oliviacarlisle/core-dslib.git"
   },
   "keywords": [
+    "data structures",
     "queue",
     "fifo",
     "enqueue",
@@ -36,9 +37,9 @@
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/oliviacarlisle/ts-data-structures/issues"
+    "url": "https://github.com/oliviacarlisle/core-dslib/issues"
   },
-  "homepage": "https://github.com/oliviacarlisle/ts-data-structures#readme",
+  "homepage": "https://github.com/oliviacarlisle/core-dslib/#readme",
   "devDependencies": {
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",

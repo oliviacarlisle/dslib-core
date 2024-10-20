@@ -1,8 +1,9 @@
 /**
- * An simple, efficient queue implementation with amortized O(1) operations,
- * using a circular buffer.
+ * @module
  *
- * Dynamically resizes to manage memory usage.
+ * This module serves as the entry point for the package, re-exporting core classes and utilities.
+ * Users can import these classes directly from the package.
  *
  */
+
 export { Queue } from './core/Queue.js';
