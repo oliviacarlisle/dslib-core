@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/oliviacarlisle/core-dslib/badge.svg?branch=main)](https://coveralls.io/github/oliviacarlisle/core-dslib?branch=main)
+
 # core-dslib
 
 **A simple yet powerful data structures library for TypeScript and JavaScript projects.**
