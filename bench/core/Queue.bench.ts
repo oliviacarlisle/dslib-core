@@ -1,4 +1,4 @@
-import { Queue } from '../src/Queue';
+import { Queue } from '../../src/index';
 
 let q: Queue<any>;
 let arr: any[];

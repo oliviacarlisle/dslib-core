@@ -1,20 +1,24 @@
-# mini-queue
+# core-dslib
 
-A simple, efficient queue implementation written in TypeScript.
+**A simple yet powerful data structures library for TypeScript and JavaScript projects.**
+
+Designed for production environments and scalability, **core-dslib** is a developer's versatile toolbox for projects of any size. It provides essential data structures that enhance the capabilities of TypeScript and JavaScript, filling in the gaps left by the standard libraries.
 
 ## Data Structures
 
 ### Queue
 
-A simple, efficient queue implementation with amortized O(1) operations, using a circular buffer.
+**Amortized O(1) Operations:** Utilizes a circular buffer to ensure efficient enqueue and dequeue operations.
 
-The performance of the enqueue and dequeue methods is roughly similar to that of the built-in push and pop methods, respectively.
+**Performance:** Enqueue and dequeue methods offer performance comparable to the built-in array `push` and `pop` methods.
 
-Preliminary benchmark results compared to built-in array method for 2^22 (approx. 4 million) calls to push/enqueue and pop/dequeue:
+**Benchmark Results:**
+
+- Tested with approximately 4 million (`2^22`) calls to enqueue/dequeue.
+- Demonstrated similar efficiency to native array methods in high-load scenarios.
 
 ```
-> mini-queue@1.0.0 bench
-> tsx bench/Queue.bench.ts
+> npm run bench
 
 Test size: 4194304 (2^22)
 
@@ -47,6 +51,7 @@ Benchmark script run on MacBook Pro (M3 Pro) using the following version of `tsx
 
 ```
 > tsx --version
+
 tsx v4.19.1
 node v20.17.0
 ```

@@ -1,19 +1,20 @@
 {
-  "name": "mini-queue",
+  "name": "core-dslib",
   "version": "1.0.0",
-  "description": "A simple, efficient queue implementation written in TypeScript",
+  "description": "A simple yet powerful data structures library for TypeScript and JavaScript projects.",
   "type": "module",
   "scripts": {
     "test": "jest",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"bench/**/*.ts\"",
-    "build": "tsc -p tsconfig.dist.json",
-    "bench": "tsx bench/Queue.bench.ts"
+    "build": "rm -rf dist && tsc -p tsconfig.dist.json",
+    "bench": "tsx bench/core/Queue.bench.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oliviacarlisle/ts-data-structures.git"
+    "url": "git+https://github.com/oliviacarlisle/core-dslib.git"
   },
   "keywords": [
+    "data structures",
     "queue",
     "fifo",
     "enqueue",
@@ -22,16 +23,23 @@
   "author": "Olivia Carlisle",
   "license": "MIT",
   "exports": {
-    ".": "./dist/Queue.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./core/*": {
+      "types": "./dist/core/*.d.ts",
+      "import": "./dist/core/*.js"
+    }
   },
-  "types": "dist/Queue.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/oliviacarlisle/ts-data-structures/issues"
+    "url": "https://github.com/oliviacarlisle/core-dslib/issues"
   },
-  "homepage": "https://github.com/oliviacarlisle/ts-data-structures#readme",
+  "homepage": "https://github.com/oliviacarlisle/core-dslib/#readme",
   "devDependencies": {
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
