@@ -1,6 +1,6 @@
-# mini-queue
+# array-queue
 
-A simple, efficient queue implementation written in TypeScript.
+A simple, efficient queue implementation using a circular buffer.
 
 ## Data Structures
 
