@@ -1,4 +1,4 @@
-import { Queue } from '../src/core/Queue';
+import { Queue } from '../src/lib/Queue.js';
 
 describe('Queue', () => {
   let queue: Queue<number>;
