@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"bench/**/*.ts\"",
     "build": "rm -rf dist && tsc -p tsconfig.dist.json",
     "bench": "tsx bench/core/Queue.bench.ts"
