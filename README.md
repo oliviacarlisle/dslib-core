@@ -4,6 +4,28 @@
 
 Designed for production environments and scalability, **core-dslib** is a developer's versatile toolbox for projects of any size. It provides essential data structures that enhance the capabilities of TypeScript and JavaScript, filling in the gaps left by the standard libraries.
 
+Note: currently only compatible with ESM projects.
+
+## Getting Started
+
+Install:
+
+```
+npm i core-dslib
+```
+
+Quick start example:
+
+```
+import { Queue } from 'core-dslib';
+
+const queue = new Queue<number>();
+
+queue.enqueue(3);
+
+console.log(queue.dequeue()); // 3
+```
+
 ## Data Structures
 
 ### Queue
