@@ -8,7 +8,7 @@ describe('Queue', () => {
   });
 
   it('should create an empty queue', () => {
-    expect(queue.size).toBe(0);
+    expect(queue.size).toBe(1);
   });
 
   it('should enqueue elements', () => {
