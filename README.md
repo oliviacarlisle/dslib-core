@@ -133,7 +133,7 @@ for (const item of queue) {
 // third
 
 for (const [item, i] of queue.entries()) {
-  console.log(`Index ${index}: ${value}`);
+  console.log(`Index ${i}: ${item}`);
 }
 // Output:
 // Index 0: first
