@@ -12,13 +12,13 @@ Note: currently only compatible with ESM projects.
 
 Install:
 
-```
+```bash
 npm i core-dslib
 ```
 
 Quick start example:
 
-```
+```typescript
 import { Queue } from 'core-dslib';
 
 const queue = new Queue<number>();
@@ -41,7 +41,7 @@ console.log(queue.dequeue()); // 3
 - Tested with approximately 4 million (`2^22`) calls to enqueue/dequeue.
 - Demonstrated similar efficiency to native array methods in high-load scenarios.
 
-```
+```bash
 > npm run bench
 
 Test size: 4194304 (2^22)
@@ -73,7 +73,7 @@ dequeue: 23.145ms
 
 Benchmark script run on MacBook Pro (M3 Pro) using the following version of `tsx` and `node`:
 
-```
+```bash
 > tsx --version
 
 tsx v4.19.1
