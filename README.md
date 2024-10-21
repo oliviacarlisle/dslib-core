@@ -174,50 +174,46 @@ console.log(queue.dequeue()); // Output: undefined
 
 #### Performance
 
-**Performance:** Enqueue and dequeue methods offer performance comparable to the built-in array `push` and `pop` methods.
+**Performance:** `enqueue` and `dequeue` methods offer performance comparable to the built-in array `push` and `pop` methods.
 
 **Benchmark Results:**
 
-- Tested with approximately 4 million (`2^22`) enqueue/dequeue operations.
-- Demonstrated similar efficiency to native array methods under high load.
-
 ```bash
-> npm run bench
-
-Test size: 4194304 (2^22)
-
-------- numbers -------
-push: 25.385ms
-enqueue: 31.665ms
--------
-pop: 9.322ms
-dequeue: 27.606ms
------------------------
-
-------- strings -------
-push: 220.045ms
-enqueue: 209.886ms
--------
-pop: 9.557ms
-dequeue: 23.174ms
------------------------
-
-------- objects -------
-push: 195.094ms
-enqueue: 307.915ms
--------
-pop: 9.358ms
-dequeue: 23.145ms
------------------------
+┌─────────┬───────────┬──────────────┬────────────────────┬───────────┬──────────┐
+│ (index) │ Task Name │ ops/sec      │ Average Time (ns)  │ Margin    │ Samples  │
+├─────────┼───────────┼──────────────┼────────────────────┼───────────┼──────────┤
+│ 0       │ 'enqueue' │ '27,675,706' │ 36.132772689503845 │ '±14.28%' │ 13838019 │
+│ 1       │ 'push'    │ '26,611,405' │ 37.5778722674608   │ '±9.86%'  │ 13665449 │
+└─────────┴───────────┴──────────────┴────────────────────┴───────────┴──────────┘
+┌─────────┬───────────┬──────────────┬────────────────────┬──────────┬─────────┐
+│ (index) │ Task Name │ ops/sec      │ Average Time (ns)  │ Margin   │ Samples │
+├─────────┼───────────┼──────────────┼────────────────────┼──────────┼─────────┤
+│ 0       │ 'pop'     │ '36,840,562' │ 27.143994127022697 │ '±0.93%' │ 7368113 │
+│ 1       │ 'shift'   │ '797'        │ 1253180.9375000647 │ '±1.20%' │ 160     │
+│ 2       │ 'dequeue' │ '33,964,152' │ 29.442807571542765 │ '±8.38%' │ 6792831 │
+└─────────┴───────────┴──────────────┴────────────────────┴──────────┴─────────┘
 ```
 
-_Benchmarks conducted on a MacBook Pro (M3 Pro) using the following versions:_
+- The first table compares the performance of the built-in `push` method (on an empty array) and the `enqueue` method (on an empty `Queue`). Benchmarks tasks run sequentially for 500ms each.
+- The second table compares the performance of the built-in `pop` and `shift` methods, and the `dequeue` method. Each benchmark task starts with an array/queue (as applicable) of size `2^24` (approx. 16 million). Benchmarks tasks run sequentially for 200ms each.
+- Demonstrates similar efficiency to native array methods under high load, with a massive improvement over the buit-in `shift` method.
+
+> **_Note:_** The above benchmarks are run using items of type `object` in order to better simulate real-world scenarios. Using primitive data types like `string` or `number` would generally result in faster performance.
+
+_Benchmarks conducted on 10/21/2024 using `tinybench` on a MacBook Pro (M3 Pro) using the following versions:_
 
 ```bash
 > tsx --version
 
 tsx v4.19.1
 node v20.17.0
+```
+
+To benchmark with your setup, clone this repo and run:
+
+```bash
+npm install
+npm run bench
 ```
 
 ## 🌟 Contributing
