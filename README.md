@@ -54,6 +54,7 @@ Implemented using a circular buffer to ensure efficient enqueue and dequeue oper
 - **Performance:** Enqueue and dequeue operations with amortized O(1) complexity.
 - **Dynamic Resizing:** Automatically resizes to manage memory usage efficiently.
 - **Iterable**: Implements the `Iterable` interface, allowing you to use the queue with `for...of` loops, spread (`...`) syntax and other iterable contexts.
+- **Enhanced Runtime Privacy**: Leverages ES2022 private class fields (`#`) for robust encapsulation, ensuring data privacy during execution.
 - **Type Safety:** Fully typed for TypeScript, ensuring type safety and IntelliSense support.
 - **Versatility:** Suitable for handling numbers, strings, objects, and more.
 
