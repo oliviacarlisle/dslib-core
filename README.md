@@ -1,11 +1,11 @@
 # dslib-core
 
-[![npm](https://img.shields.io/npm/v/dslib-core.svg)](https://www.npmjs.com/package/dslib-core)
-[![npm](https://img.shields.io/github/release-date/oliviacarlisle/dslib-core)](https://www.npmjs.com/package/dslib-core)
+[![npm version](https://img.shields.io/npm/v/dslib-core.svg)](https://www.npmjs.com/package/dslib-core)
+[![npm release date](https://img.shields.io/github/release-date/oliviacarlisle/dslib-core)](https://www.npmjs.com/package/dslib-core)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/oliviacarlisle/dslib-core/ci.yml)](https://github.com/oliviacarlisle/dslib-core/actions)
 [![codecov](https://codecov.io/gh/oliviacarlisle/dslib-core/graph/badge.svg?token=SVPFWK8OW9)](https://codecov.io/gh/oliviacarlisle/dslib-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/dslib-core)
+[![install size](https://packagephobia.com/badge?p=dslib-core)](https://packagephobia.com/result?p=dslib-core)
 ![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/dslib-core)
 
 A robust and efficient data structures library.
