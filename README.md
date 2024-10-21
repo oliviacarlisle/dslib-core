@@ -17,13 +17,13 @@ A robust and efficient data structures library.
 
 ## Table of Contents
 
-- [💡 Why core-dslib?](#why-core-dslib)
-- [📦 Installation](#installation)
-- [🚀 Getting Started](#getting-started)
-- [🏗️ Data Structures](#data-structures)
-  - [🔄 Queue](#queue)
-- [🌟 Contributing](#contributing)
-- [⚖️ License](#license)
+- [💡 Why core-dslib?](#-why-core-dslib)
+- [📦 Installation](#-installation)
+- [🚀 Getting Started](#-getting-started)
+- [🏗️ Data Structures](#-data-structures)
+  - [🔄 Queue](#-queue)
+- [🌟 Contributing](#-contributing)
+- [⚖️ License](#-license)
 
 ## 💡 Why core-dslib?
 
