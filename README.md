@@ -20,10 +20,10 @@ A robust and efficient data structures library.
 - [💡 Why core-dslib?](#-why-core-dslib)
 - [📦 Installation](#-installation)
 - [🚀 Getting Started](#-getting-started)
-- [🏗️ Data Structures](#-data-structures)
+- [🏗️ Data Structures](#%EF%B8%8F-data-structures)
   - [🔄 Queue](#-queue)
 - [🌟 Contributing](#-contributing)
-- [⚖️ License](#-license)
+- [⚖️ License](#%EF%B8%8F-license)
 
 ## 💡 Why core-dslib?
 
