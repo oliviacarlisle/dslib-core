@@ -4,22 +4,36 @@
 [![Build Status](https://github.com/oliviacarlisle/core-dslib/actions/workflows/ci.yml/badge.svg)](https://github.com/oliviacarlisle/core-dslib/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**A simple yet powerful data structures library for TypeScript and JavaScript projects.**
+A robust and efficient data structures library.
 
-Designed for production environments and scalability, **core-dslib** is a developer's versatile toolbox for projects of any size. It provides essential data structures that enhance the capabilities of TypeScript and JavaScript, filling in the gaps left by the standard libraries.
+## ✨ Features
 
-> **Note:** Currently only compatible with ESM projects.
+- 🧰 **Foundational**: Growing collection of essential data structures
+- 🛡️ **Reliable**: Robust stability with 100% test coverage
+- ⚡ **High-Performance**: Optimized for efficiency in demanding applications
+- ⛰️ **Scalable**: Adaptable for projects of any size
+- 🪶 **Lightweight**: Zero dependencies, keeping your project lean
+- 🔷 **TypeScript Native**: Full type safety and intelligent code completion
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Data Structures](#data-structures)
-  - [Queue](#queue)
-- [Contributing](#contributing)
-- [License](#license)
+- [💡 Why core-dslib?](#why-core-dslib)
+- [📦 Installation](#installation)
+- [🚀 Getting Started](#getting-started)
+- [🏗️ Data Structures](#data-structures)
+  - [🔄 Queue](#queue)
+- [🌟 Contributing](#contributing)
+- [⚖️ License](#license)
 
-## Installation
+## 💡 Why core-dslib?
+
+`core-dslib` is your go-to toolkit for advanced data structures in TypeScript and JavaScript. It bridges the gap left by standard libraries, empowering developers with the tools they need for efficient data management and manipulation.
+
+Whether you're building a complex algorithm or optimizing application performance, `core-dslib` provides the building blocks you need to succeed.
+
+> **Note:** Currently only compatible with ESM projects.
+
+## 📦 Installation
 
 Install the package via npm:
 
@@ -27,7 +41,7 @@ Install the package via npm:
 npm install core-dslib
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 Import using ESM syntax:
 
@@ -43,9 +57,9 @@ queue.enqueue(3);
 console.log(queue.dequeue()); // Output: 3
 ```
 
-## Data Structures
+## 🏗️ Data Structures
 
-### Queue
+### 🔄 Queue
 
 Implemented using a circular buffer to ensure efficient enqueue and dequeue operations.
 
@@ -202,7 +216,7 @@ tsx v4.19.1
 node v20.17.0
 ```
 
-## Contributing
+## 🌟 Contributing
 
 Contributions are welcome! If you have ideas, suggestions, or find any issues, please open an [issue](https://github.com/oliviacarlisle/core-dslib/issues) or submit a [pull request](https://github.com/oliviacarlisle/core-dslib/pulls).
 
@@ -227,7 +241,7 @@ Run tests:
 npm test
 ```
 
-## License
+## ⚖️ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
