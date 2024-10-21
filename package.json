@@ -1,7 +1,7 @@
 {
   "name": "core-dslib",
   "version": "1.0.0",
-  "description": "A simple yet powerful data structures library for TypeScript and JavaScript projects.",
+  "description": "A robust and efficient data structures library.",
   "type": "module",
   "scripts": {
     "test": "jest",
@@ -21,6 +21,9 @@
     "enqueue",
     "dequeue"
   ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "author": "Olivia Carlisle",
   "license": "MIT",
   "exports": {
