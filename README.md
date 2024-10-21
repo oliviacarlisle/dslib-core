@@ -6,7 +6,8 @@
 [![codecov](https://codecov.io/gh/oliviacarlisle/dslib-core/graph/badge.svg?token=SVPFWK8OW9)](https://codecov.io/gh/oliviacarlisle/dslib-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![install size](https://packagephobia.com/badge?p=dslib-core)](https://packagephobia.com/result?p=dslib-core)
-![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/dslib-core)
+[![npm package minified size](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdeno.bundlejs.com%2F%3Fq%3Ddslib-core&query=size.uncompressedSize&label=minified%20size)](https://bundlejs.com/?q=dslib-core)
+[![npm package minified gzipped size](https://img.shields.io/bundlejs/size/dslib-core)](https://bundlejs.com/?q=dslib-core)
 
 A robust and efficient data structures library.
 
