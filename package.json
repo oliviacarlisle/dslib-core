@@ -1,5 +1,5 @@
 {
-  "name": "core-dslib",
+  "name": "dslib-core",
   "version": "1.0.0",
   "description": "A robust and efficient data structures library.",
   "type": "module",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oliviacarlisle/core-dslib.git"
+    "url": "git+https://github.com/oliviacarlisle/dslib-core.git"
   },
   "keywords": [
     "data structures",
@@ -36,9 +36,9 @@
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/oliviacarlisle/core-dslib/issues"
+    "url": "https://github.com/oliviacarlisle/dslib-core/issues"
   },
-  "homepage": "https://github.com/oliviacarlisle/core-dslib/#readme",
+  "homepage": "https://github.com/oliviacarlisle/dslib-core/#readme",
   "devDependencies": {
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
