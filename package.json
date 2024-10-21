@@ -1,6 +1,6 @@
 {
   "name": "dslib-core",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A robust and efficient data structures library.",
   "type": "module",
   "scripts": {
