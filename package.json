@@ -21,9 +21,6 @@
     "enqueue",
     "dequeue"
   ],
-  "engines": {
-    "node": ">=20.0.0"
-  },
   "author": "Olivia Carlisle",
   "license": "MIT",
   "exports": {
