@@ -61,6 +61,26 @@ queue.enqueue(3);
 console.log(queue.dequeue()); // Output: 3
 ```
 
+### 🚧 Using `dslib-core` in CommonJS Projects
+
+`dslib-core` is primarily designed for ESM (ECMAScript Module) environments. However, you can still use it in CommonJS projects with a few adjustments.
+
+To use `dslib-core` in a CommonJS project, we suggest using a dynamic `import()` within an async IIFE (Immediately Invoked Function Expression). Here's an example:
+
+```typescript
+// CommonJS project example
+(async function () {
+  const { Queue } = await import('dslib-core');
+
+  // Your code here
+  const queue = new Queue();
+  queue.enqueue(1);
+  console.log(queue.dequeue()); // Output: 1
+})();
+```
+
+This approach allows you to use the ESM-native `dslib-core` package within your CommonJS environment while maintaining asynchronous module loading.
+
 ## 🏗️ Data Structures
 
 ### 🔄 Queue
