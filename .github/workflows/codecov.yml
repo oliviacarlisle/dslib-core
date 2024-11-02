@@ -20,10 +20,10 @@ jobs:
           node-version: 22.x
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run tests
-        run: npx jest --coverage
+        run: npm run test:coverage
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4

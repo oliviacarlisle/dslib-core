@@ -25,3 +25,9 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Run lint check
+        run: npm run lint
+
+      - name: Run format check
+        run: npm run format:check

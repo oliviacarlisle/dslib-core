@@ -1,7 +1,7 @@
 import { Bench } from 'tinybench';
 import { Queue } from '../src/index.js';
 
-type BenchmarkType = Record<string, any>;
+type BenchmarkType = Record<string, number>;
 
 // Set up
 let q = new Queue<BenchmarkType>();
