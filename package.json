@@ -1,12 +1,17 @@
 {
   "name": "dslib-core",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A robust and efficient data structures library.",
   "type": "module",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"bench/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\" \"bench/**/*.ts\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check": "npm run format:check && npm run lint && npm run test",
+    "fix": "npm run format && npm run lint:fix",
     "build": "rm -rf dist && tsc -p tsconfig.dist.json",
     "bench": "tsx bench/Queue.bench.ts"
   },
@@ -44,13 +49,17 @@
   },
   "homepage": "https://github.com/oliviacarlisle/dslib-core/#readme",
   "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
+    "eslint": "^9.14.0",
     "jest": "^29.7.0",
     "prettier": "^3.3.3",
     "tinybench": "^2.9.0",
     "ts-jest": "^29.2.5",
     "tsx": "^4.19.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.12.2"
   }
 }

@@ -184,10 +184,6 @@ export class Queue<T> implements Iterable<T> {
   forEach(
     callbackFn: (value: T, index: number, queue: Queue<T>) => void,
   ): void {
-    if (typeof callbackFn !== 'function') {
-      throw new TypeError('callbackFn must be a function');
-    }
-
     for (let i = 0; i < this.#size; i++) {
       const value = this.#buffer[(this.#head + i) % this.#buffer.length] as T;
       callbackFn(value, i, this);

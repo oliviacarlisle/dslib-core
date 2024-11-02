@@ -203,8 +203,6 @@ describe('Queue', () => {
       expect(value).toBe(arr[index]);
       expect(q).toBe(queue);
     });
-
-    expect(() => queue.forEach(3 as any)).toThrow();
   });
 
   it('should get an element by index', () => {
